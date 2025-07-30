@@ -1,7 +1,19 @@
 # 🌐 George Betsios - Developer Portfolio
 
-Welcome to my personal developer portfolio built with **React.js**.  
+🔗 [Live Demo](https://georgebetsios.github.io/myPortfolio/)
+
+This is my personal developer portfolio built with **React.js**.  
 It showcases my **projects**, **skills**, and includes a **contact form** that sends emails using **EmailJS**.
+
+---
+
+## 🧭 Sections
+
+- 🏠 Home
+- 👨‍💻 About
+- 🧠 Skills
+- 💼 Projects
+- 📬 Contact
 
 ---
 
@@ -23,6 +35,19 @@ It showcases my **projects**, **skills**, and includes a **contact form** that s
 - **CSS Modules**
 - **EmailJS**
 - **React Icons**
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Section
+![Home](screenshots/home.png)
+
+### 💼 Projects Section
+![Projects](screenshots/projects.png)
+
+### 📬 Contact Form
+![Contact](screenshots/contact.png)
 
 ---
 
