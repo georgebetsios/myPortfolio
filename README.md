@@ -43,6 +43,9 @@ It showcases my **projects**, **skills**, and includes a **contact form** that s
 ### 🏠 Home Section
 ![Home](screenshots/home.png)
 
+### 🧠 Skills Section  
+![Skills](screenshots/skills.png)
+
 ### 💼 Projects Section
 ![Projects](screenshots/projects.png)
 
