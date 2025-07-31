@@ -16,7 +16,7 @@ const About = () => {
       </p>
       <p>I started coding from scratch during my thesis project, which fueled my passion for building
         functional and user-centered applications. Since then, I have been continuously improving my skills
-        through personal projects and self-driven learning, eager to contribute to impactful software development
+        through personal projects and self-driven learning, eager to contribute to impactful software development.
       </p>
       <p>Upcoming MSc in <strong>Technologies of Interactive Systems </strong>Aristotle University of Thessaloniki, focusing on
         interactive design and HCI.
