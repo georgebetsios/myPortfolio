@@ -55,7 +55,7 @@ It showcases my **projects**, **skills**, and includes a **contact form** that s
 ---
 
 ## 📁 Project Structure
-
+```
 portfolio/
 ├── public/
 ├── src/
@@ -68,7 +68,7 @@ portfolio/
 ├── .env
 ├── package.json
 └── README.md
-
+```
 
 
 ---
