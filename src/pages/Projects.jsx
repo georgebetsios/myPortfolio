@@ -18,6 +18,13 @@ const projectsData = [
   },
   {
     id: 3,
+    title: 'Todo App',
+    description: 'A modern and secure ToDo app featuring user authentication and personalized task management. Users can register, log in, create, update, and delete tasks in real-time.',
+    technologies: ['Node.js', 'Express.js', 'MySQL', 'JWT', 'React', 'Axios', 'CSS Modules'],
+    github: 'https://github.com/georgebetsios/todo-app',
+  },
+  {
+    id: 4,
     title: 'Java Mini Projects',
     description: 'A collection of 3 small Java desktop applications including a Stopwatch, Calculator, and Weather App. Demonstrates Java GUI development with Swing/AWT and basic functionalities for each tool.',
     technologies: ['Java', 'Swing', 'AWT'],
