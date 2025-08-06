@@ -55,18 +55,20 @@ It showcases my **projects**, **skills**, and includes a **contact form** that s
 ---
 
 ## 📁 Project Structure
+
 portfolio/
 ├── public/
 ├── src/
-│ ├── assets/ # images, icons, backgrounds
-│ ├── components/ # reusable React components (e.g., Navbar, Footer)
-│ ├── sections/ # Home, About, Skills, Projects, Contact
-│ ├── styles/ # CSS files (modular per section)
-│ ├── App.jsx
-│ └── main.jsx
-├── .env # EmailJS API keys (not committed)
+│   ├── assets/        
+│   ├── components/     
+│   ├── sections/       
+│   ├── styles/         
+│   ├── App.jsx
+│   └── main.jsx
+├── .env                
 ├── package.json
 └── README.md
+
 
 
 ---
