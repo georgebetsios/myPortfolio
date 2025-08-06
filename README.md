@@ -56,18 +56,7 @@ It showcases my **projects**, **skills**, and includes a **contact form** that s
 
 ## 📁 Project Structure
 
-portfolio/
-├── public/
-├── src/
-│   ├── assets/        
-│   ├── components/     
-│   ├── sections/       
-│   ├── styles/         
-│   ├── App.jsx
-│   └── main.jsx
-├── .env                
-├── package.json
-└── README.md
+<pre> ``` portfolio/ ├── public/ ├── src/ │ ├── assets/ │ ├── components/ │ ├── sections/ │ ├── styles/ │ ├── App.jsx │ └── main.jsx ├── .env ├── package.json └── README.md ``` </pre>
 
 
 
