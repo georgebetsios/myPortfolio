@@ -1,54 +1,67 @@
+import { useEffect, useRef } from 'react';
 import '../styles/Skills.css';
 
 const Skills = () => {
+  const categoriesRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }  
+        });
+      },
+      { threshold: 0.2 } // ενεργοποίηση όταν 20% του element είναι ορατό
+    );
+
+    categoriesRef.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="skills-section">
+    <div className="skills-section" id="skills">
       <h2 className="skills-title">Skills</h2>
 
       <div className="skills-grid">
-        <div className="skills-category">
-          <h3>Frontend</h3>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React.js</li>
-            <li>Responsive Design</li>
-          </ul>
-        </div>
-
-        <div className="skills-category">
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>RESTful APIs</li>
-            <li>MongoDB / Mongoose</li>
-            <li>SQL / MySQL</li>
-          </ul>
-        </div>
-
-        <div className="skills-category">
-          <h3>Tools & Other</h3>
-          <ul>
-            <li>Git & GitHub</li>
-            <li>Postman</li>
-            <li>VS Code</li>
-          </ul>
-        </div>
-
-        <div className="skills-category">
-          <h3>Programming Languages</h3>
-          <ul>
-            <li>Java</li>
-            <li>Python</li>
-            <li>C++</li>
-          </ul>
-        </div>
+        {[
+          {
+            title: 'Frontend',
+            items: ['HTML', 'CSS', 'JavaScript (ES6+)', 'React.js', 'Responsive Design'],
+          },
+          {
+            title: 'Backend',
+            items: ['Node.js', 'Express.js', 'RESTful APIs', 'MongoDB / Mongoose', 'SQL / MySQL'],
+          },
+          {
+            title: 'Tools & Other',
+            items: ['Git & GitHub', 'Postman', 'VS Code'],
+          },
+          {
+            title: 'Programming Languages',
+            items: ['Java', 'Python', 'C++'],
+          },
+        ].map((cat, i) => (
+          <div
+            key={i}
+            className="skills-category"
+            ref={(el) => (categoriesRef.current[i] = el)}
+          >
+            <h3>{cat.title}</h3>
+            <ul>
+              {cat.items.map((item, j) => (
+                <li key={j}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
-
   );
 };
 

@@ -1,6 +1,6 @@
 .projects-section {
     min-height: 100vh;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
     position: relative;
     z-index: 1;
     color: white;
@@ -31,7 +31,7 @@
 }
 
 .projects-title h2 {
-    margin: 1rem auto;
+    margin: 0 auto 2rem;
 }
 
 @keyframes shine {
@@ -44,8 +44,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    max-height: 75vh;
-    overflow-y: auto;
     padding-top: 12px;
 }
 
@@ -55,19 +53,18 @@
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 0 12px rgba(164, 184, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     min-height: 320px;
-}
 
-.project-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 0 18px rgba(164, 184, 255, 0.3);
-    border-color: rgba(164, 184, 255, 0.3);
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.6s ease-out, transform 0.5s ease-out, 
+                box-shadow 0.5s ease-out, border-color 0.5s ease-out;
+                
 }
 
 .project-card h2 {
@@ -109,11 +106,29 @@
     font-size: 1.2rem;
 }
 
+.project-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.project-card.visible:nth-child(1) { transition-delay: 0.2s; }
+.project-card.visible:nth-child(2) { transition-delay: 0.4s; }
+.project-card.visible:nth-child(3) { transition-delay: 0.6s; }
+.project-card.visible:nth-child(4) { transition-delay: 0.8s; }
+
+.project-card.visible:hover {
+    transform: translateX(0) translateY(-1px);
+    box-shadow: 0 0 18px rgba(164, 184, 255, 0.3);
+    border-color: rgba(164, 184, 255, 0.3);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
 /* Mobile */
 @media (max-width: 600px) {
     .projects-section {
         padding: 0 1rem;
-        margin: 2rem auto;
+        margin: 0 auto 2rem;
     }
 
     .projects-title {
@@ -129,8 +144,6 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
-        max-height: 77vh;
-        overflow-y: auto;
         max-width: 100%;
     }
 

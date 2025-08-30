@@ -1,10 +1,30 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import '../styles/Contact.css';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // slide μόνο την πρώτη φορά
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (contactRef.current) observer.observe(contactRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const form = useRef();
   const [status, setStatus] = useState('');
   const [formData, setFormData] = useState({
@@ -94,7 +114,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='contact-section'>
+    <div className='contact-section' ref={contactRef}>
       <h1>Contact</h1>
 
       <div className="contact-info">

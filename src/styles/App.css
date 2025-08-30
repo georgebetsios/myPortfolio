@@ -16,4 +16,6 @@
 section {
   padding: 1rem; 
   min-height: 100vh;
+  overflow: hidden;
+  scroll-margin-top: 63px;
 }

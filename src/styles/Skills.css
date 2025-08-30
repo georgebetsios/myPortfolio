@@ -1,7 +1,6 @@
-
 .skills-section {
   min-height: 100vh;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   position: relative;
   z-index: 1;
   color: white;
@@ -34,13 +33,10 @@
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(164, 184, 255, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.skills-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 18px rgba(164, 184, 255, 0.3);
-  border-color: rgba(164, 184, 255, 0.3);
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s ease-out, transform 0.5s ease-out,
+    box-shadow 0.5s ease-out, border-color 0.5s ease-out;
 }
 
 .skills-category h3 {
@@ -61,6 +57,35 @@
   opacity: 0.85;
 }
 
+.skills-category.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skills-category:nth-child(1).visible {
+  transition-delay: 0.2s;
+}
+
+.skills-category:nth-child(2).visible {
+  transition-delay: 0.4s;
+}
+
+.skills-category:nth-child(3).visible {
+  transition-delay: 0.6s;
+}
+
+.skills-category:nth-child(4).visible {
+  transition-delay: 0.8s;
+}
+
+.skills-category.visible:hover {
+  transform: translateX(0) translateY(-1px);
+  box-shadow: 0 0 18px rgba(164, 184, 255, 0.3);
+  border-color: rgba(164, 184, 255, 0.3);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
 /* Tablet */
 @media (max-width: 900px) {
   .skills-grid {
@@ -75,16 +100,14 @@
   }
 
   .skills-title {
-    margin-top: 3rem;
-    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    max-height: 80vh;
-    overflow-y: auto;
     max-width: 100%;
   }
 

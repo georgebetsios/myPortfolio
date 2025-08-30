@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="navbar-left">
           <div className="navbar-logo">
             <i className="fas fa-code icon"></i>
-            <span className="logo-text">George Betsios</span>
+            <a className="logo-text" href='#home'>George Betsios</a>
           </div>
 
           <button

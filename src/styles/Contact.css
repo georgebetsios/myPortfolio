@@ -1,8 +1,6 @@
 .contact-section {
   max-width: 700px;
-  min-height: 80vh;
-  max-height: 90vh;
-  margin: 5rem auto;
+  margin: 3rem auto 0;
   padding: 0 1.5rem 1rem;
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(164, 184, 255, 0.15);
@@ -10,13 +8,21 @@
   box-shadow: 0 0 12px rgba(164, 184, 255, 0.05);
   position: relative;
   z-index: 1;
-  overflow-y: auto;
   color: #dcdffe;
   font-family: 'Poppins', sans-serif;
   cursor: default;
   line-height: 1.7;
   font-size: 1.1rem;
   bottom: 1rem;
+
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.contact-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .status-message {
@@ -161,10 +167,8 @@
 @media (max-width: 768px) {
   .contact-section {
     padding: 0 1rem 1rem;
-    overflow-y: auto;
-    max-height: 90vh;
     max-width: 100%;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 
   .contact-info {

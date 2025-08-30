@@ -1,5 +1,6 @@
 import '../styles/Projects.css';
 import { FaGithub } from 'react-icons/fa';
+import { useEffect, useRef } from 'react';
 
 const projectsData = [
   {
@@ -32,9 +33,9 @@ const projectsData = [
   },
 ];
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, refProp }) => {
   return (
-    <div className="project-card">
+    <div className="project-card" ref={refProp}>
       <h2>{project.title}</h2>
       <p>{project.description}</p>
       <h4 className='technologies'>Technologies:</h4>
@@ -51,15 +52,41 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // μόνο πρώτη φορά
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardsRef.current.forEach(card => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="projects-section">
+    <div className="projects-section" id="projects">
       <div className="projects-title">
         <h2>My Projects</h2>
       </div>
 
       <div className="projects-grid">
-        {projectsData.map(project => (
-          <ProjectCard key={project.id} project={project} />
+        {projectsData.map((project, i) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            refProp={(el) => (cardsRef.current[i] = el)}
+          />
         ))}
       </div>
     </div>

@@ -1,9 +1,30 @@
+import { useEffect, useRef } from 'react';
 import '../styles/About.css';
 
 
 const About = () => {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // slide μόνο την πρώτη φορά
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) observer.observe(aboutRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="about-section">
+    <div className="about-section" ref={aboutRef}>
       <h1>About Me</h1>
       <p>
         I'm a passionate Junior Full Stack Developer who loves building fast, scalable, and user-friendly
