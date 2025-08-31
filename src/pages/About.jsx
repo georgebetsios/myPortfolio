@@ -11,7 +11,7 @@ const About = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // slide μόνο την πρώτη φορά
+            observer.unobserve(entry.target); 
           }
         });
       },

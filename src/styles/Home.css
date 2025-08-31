@@ -130,7 +130,7 @@
 
 .container.fade-in > .links {
   animation: fadeUp 0.4s ease-out forwards;
-  animation-delay: 0.8s; /* button στα 0.8s */
+  animation-delay: 0.8s; 
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -148,7 +148,7 @@
 @media (max-width: 768px) {
   .container{
     text-align: center;
-    margin: 0 2rem 2rem;
+    margin: 0 2rem 4rem;
     
   }
   .title {

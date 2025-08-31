@@ -60,7 +60,7 @@ const Projects = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // μόνο πρώτη φορά
+            observer.unobserve(entry.target); 
           }
         });
       },

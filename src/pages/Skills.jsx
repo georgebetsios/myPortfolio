@@ -14,7 +14,7 @@ const Skills = () => {
           }  
         });
       },
-      { threshold: 0.2 } // ενεργοποίηση όταν 20% του element είναι ορατό
+      { threshold: 0.2 } 
     );
 
     categoriesRef.current.forEach((el) => {
