@@ -77,14 +77,6 @@
 
 .navbar-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
 }
 
 .navbar-toggle:focus {
@@ -123,7 +115,7 @@
     align-items: center;
     gap: 2rem;
     transform: translateX(100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.7s ease, opacity 0.3s ease;
     opacity: 0;
     z-index: 940;
   }
@@ -164,6 +156,7 @@
     cursor: pointer;
     z-index: 950;
     gap: 6px;
+    padding: 0;
   }
 
   .navbar-toggle .burger {
