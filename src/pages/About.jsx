@@ -11,7 +11,7 @@ const About = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); 
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -26,24 +26,38 @@ const About = () => {
   return (
     <div className="about-section" ref={aboutRef}>
       <h1>About Me</h1>
+
       <p>
-        I'm a passionate Junior Full Stack Developer who loves building fast, scalable, and user-friendly
-        web applications.
+        I'm a Junior Full Stack Developer with a passion for building modern,
+        responsive, and user-friendly web applications. I enjoy learning new
+        technologies and continuously improving my skills through hands-on
+        projects.
       </p>
+
       <p>
-        I specialize in JavaScript and have hands-on experience with technologies like React, Node.js,
-        Express, and MongoDB. I enjoy turning complex problems into simple, elegant solutions — whether it's
-        designing a responsive UI or building RESTful APIs.
+        My primary focus is JavaScript development, with practical experience in
+        React, Node.js, Express, MongoDB, Firebase, and SQL databases. I enjoy
+        developing both intuitive user interfaces and reliable backend services
+        while writing clean, maintainable code.
       </p>
-      <p>I started coding from scratch during my thesis project, which fueled my passion for building
-        functional and user-centered applications. Since then, I have been continuously improving my skills
-        through personal projects and self-driven learning, eager to contribute to impactful software development.
+
+      <p>
+        My journey into web development began during my university thesis, where I
+        built a complete e-commerce application from scratch. Since then, I have
+        continued expanding my knowledge through personal projects, exploring new
+        technologies, and building applications that solve real-world problems.
       </p>
-      <p>Upcoming MSc in <strong>Technologies of Interactive Systems </strong>Aristotle University of Thessaloniki, focusing on
-        interactive design and HCI.
+
+      <p>
+        I'm also preparing to begin an <strong>MSc in Technologies of Interactive Systems</strong> at
+        Aristotle University of Thessaloniki, with a focus on Interactive Design
+        and Human–Computer Interaction (HCI).
       </p>
-      <p>I'm currently looking for new opportunities where I can grow as a developer and contribute to
-        impactful projects.
+
+      <p>
+        I'm currently seeking opportunities as a <strong>Junior Full Stack Developer</strong> where
+        I can continue learning, grow professionally, collaborate with experienced
+        teams, and contribute to meaningful software projects.
       </p>
     </div>
 
