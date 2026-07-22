@@ -65,16 +65,26 @@ const ProjectCard = ({ project, refProp }) => {
   return (
     <div className="project-card" ref={refProp}>
       <h2>{project.title}</h2>
-      <p>{project.description}</p>
-      <h4 className='technologies'>Technologies:</h4>
-      <p>{project.technologies.join(', ')}</p>
+      
+      <p className="project-description">{project.description}</p>
+      
+      <h4 className="technologies">Technologies:</h4>
+      
+      <p className="project-tech-list">{project.technologies.join(', ')}</p>
 
-      <p>
-        {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="github-link">
-          <FaGithub className="github-icon" />
-          GitHub
-        </a>}
-      </p>
+      {project.github && (
+        <div className="github-link-container">
+          <a 
+            href={project.github} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="github-link"
+          >
+            <FaGithub className="github-icon" />
+            GitHub
+          </a>
+        </div>
+      )}
     </div>
   );
 };

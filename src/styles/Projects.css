@@ -62,9 +62,9 @@
 
     opacity: 0;
     transform: translateX(60px);
-    transition: opacity 0.6s ease-out, transform 0.5s ease-out, 
-                box-shadow 0.5s ease-out, border-color 0.5s ease-out;
-                
+    transition: opacity 0.6s ease-out, transform 0.5s ease-out,
+        box-shadow 0.5s ease-out, border-color 0.5s ease-out;
+
 }
 
 .project-card h2 {
@@ -76,6 +76,10 @@
 .technologies {
     font-size: 1.1rem;
     margin: 0;
+}
+
+.github-link-container {
+    margin: 10px;
 }
 
 .github-link {
@@ -112,10 +116,21 @@
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.project-card.visible:nth-child(1) { transition-delay: 0.2s; }
-.project-card.visible:nth-child(2) { transition-delay: 0.4s; }
-.project-card.visible:nth-child(3) { transition-delay: 0.6s; }
-.project-card.visible:nth-child(4) { transition-delay: 0.8s; }
+.project-card.visible:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.project-card.visible:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.project-card.visible:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.project-card.visible:nth-child(4) {
+    transition-delay: 0.8s;
+}
 
 .project-card.visible:hover {
     transform: translateX(0) translateY(-1px);
@@ -150,4 +165,13 @@
     .project-card {
         padding: 0;
     }
+
+    .project-description,
+    .project-tech-list {
+        padding: 0 16px ;
+    }
+
+    .github-link-container {
+    margin-bottom: 20px;
+}
 }
