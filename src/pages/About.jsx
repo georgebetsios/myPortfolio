@@ -49,7 +49,7 @@ const About = () => {
       </p>
 
       <p>
-        I'm also preparing to begin an <strong>MSc in Technologies of Interactive Systems</strong> at
+        I'm currently completing my <strong>MSc in Technologies of Interactive Systems</strong> at
         Aristotle University of Thessaloniki, with a focus on Interactive Design
         and Human–Computer Interaction (HCI).
       </p>
