@@ -132,6 +132,22 @@
     transition-delay: 0.8s;
 }
 
+.project-card.visible:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.project-card.visible:nth-child(6) {
+    transition-delay: 1.2s;
+}
+
+.project-card.visible:nth-child(7) {
+    transition-delay: 1.4s;
+}
+
+.project-card.visible:nth-child(8) {
+    transition-delay: 1.6s;
+}
+
 .project-card.visible:hover {
     transform: translateX(0) translateY(-1px);
     box-shadow: 0 0 18px rgba(164, 184, 255, 0.3);
